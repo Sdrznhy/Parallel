@@ -37,5 +37,6 @@ int main() {
     // end time
     clock_t end = clock();
     double time = (double)(end - start) / CLOCKS_PER_SEC;
+    std::cout << "function: " << "original" << std::endl;
     std::cout << "Time taken: " << time << " seconds" << std::endl;
 }

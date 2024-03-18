@@ -1,1 +1,2 @@
-g++ main.cpp -o main
+rm ./bin/main
+g++ main.cpp -o ./bin/main
