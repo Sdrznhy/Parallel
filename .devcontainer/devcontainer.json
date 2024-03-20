@@ -2,11 +2,5 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
   }
-  "build": {
-    "args": { "VARIANT": "3", "INSTALL_MKL": "true" }
-  },
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "extensions": ["ms-vscode.cpptools"]
+  
 }
