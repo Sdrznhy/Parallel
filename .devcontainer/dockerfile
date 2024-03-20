@@ -1,13 +1,1 @@
-FROM ubuntu:latest
-
-# 更新包列表
-RUN apt-get update
-
-# 安装MKL依赖库
-RUN apt-get install -y libmkl-dev
-
-# 清理APT缓存
-RUN apt-get clean
-
-# 设置MKL环境变量
-ENV LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/mkl/lib/:/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
+FROM intel/oneapi-basekit:latest
