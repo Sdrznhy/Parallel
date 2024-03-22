@@ -1,7 +1,8 @@
 {
 	// "image": "mcr.microsoft.com/devcontainers/universal:2",
 	// "image": "intel/oneapi-basekit:2024.0.1-devel-ubuntu22.04",
-	"image": "intel/oneapi-basekit:2023.2.1-devel-ubuntu22.04",
+	// "image": "intel/oneapi-basekit:2023.2.1-devel-ubuntu22.04",
+	"image": "intel/oneapi-basekit:latest",
 	// "features": {},
 	"customizations": {
 		"vscode": {
