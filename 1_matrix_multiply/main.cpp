@@ -134,8 +134,8 @@ void test(double **A, double **B, double **C)
     C = init_matrix(M, K);
     std::cout << "loop unroll(2): " << loopUnrolling2(A, B, C) << "s" << std::endl;
     C = init_matrix(M, K);
-    std::cout << "loop unroll(4): " << loopUnrolling4(A, B, C) << "s" << std::endl;
-    C = init_matrix(M, K);
+    // std::cout << "loop unroll(4): " << loopUnrolling4(A, B, C) << "s" << std::endl;
+    // C = init_matrix(M, K);
     std::cout << "mkl: " << mkl(A, B, C) << "s" << std::endl;
 }
 

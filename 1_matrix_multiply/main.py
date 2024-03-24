@@ -1,9 +1,9 @@
 import time
 import numpy as np
 
-m = 777
-n = 787
-k = 747
+m = 1024
+n = 1024
+k = 1024
 
 if __name__ == "__main__":
     start = time.time()
