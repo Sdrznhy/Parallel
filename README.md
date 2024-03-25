@@ -6,7 +6,7 @@
   
     > Intel oneAPI Math Kernel Library (MKL)
 
-## lab2：
+## lab1：MPI矩阵乘法
 
 - 环境需求
     > Openmpi
