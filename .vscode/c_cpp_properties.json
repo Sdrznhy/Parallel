@@ -11,7 +11,8 @@
                 "/usr/local/include",
                 "/usr/include/x86_64-linux-gnu",
                 "/usr/include",
-                "/usr/lib/x86_64-linux-gnu"
+                "/usr/lib/x86_64-linux-gnu",
+                "/usr/lib/x86_64-linux-gnu/fortran/gfortran-mod-15/openmpi"
             ],
             "defines": [],
             "cStandard": "c17",

@@ -1,3 +1,4 @@
-# chmod u+x hello.sh
-mpicc -o ./bin/hello hello.c
-mpirun -np 4 ./bin/hello
+# sudo chmod u+x hello.sh
+
+mpic++ -o ./bin/mpihello ./src/mpihello.cpp
+mpirun -np 4 ./bin/mpihello
