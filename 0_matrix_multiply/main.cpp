@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib> // for rand() and srand()
 #include <ctime>   // for time()
-#include "mkl.h"
+// #include "mkl.h"
 
 #define M 1024
 #define N 1024
@@ -117,14 +117,14 @@ double loopUnrolling4(double **A, double **B, double **C)
 }
 
 // 优化算法3：使用Intel MKL库
-double mkl(double **A, double **B, double **C)
-{
-    clock_t start, end;
-    start = clock();
-    cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, M, K, N, 1, *A, N, *B, K, 0, *C, K);
-    end = clock();
-    return (double)(end - start) / CLOCKS_PER_SEC;
-}
+// double mkl(double **A, double **B, double **C)
+// {
+//     clock_t start, end;
+//     start = clock();
+//     cblas_dgemm(CblasRowMajor, CblasNoTrans, CblasNoTrans, M, K, N, 1, *A, N, *B, K, 0, *C, K);
+//     end = clock();
+//     return (double)(end - start) / CLOCKS_PER_SEC;
+// }
 
 void test(double **A, double **B, double **C)
 {
@@ -133,10 +133,10 @@ void test(double **A, double **B, double **C)
     std::cout << "adjust the order of loop: " << adjustLoopOrder(A, B, C) << "s" << std::endl;
     C = init_matrix(M, K);
     std::cout << "loop unroll(2): " << loopUnrolling2(A, B, C) << "s" << std::endl;
-    C = init_matrix(M, K);
-    // std::cout << "loop unroll(4): " << loopUnrolling4(A, B, C) << "s" << std::endl;
     // C = init_matrix(M, K);
-    std::cout << "mkl: " << mkl(A, B, C) << "s" << std::endl;
+    // // std::cout << "loop unroll(4): " << loopUnrolling4(A, B, C) << "s" << std::endl;
+    // // C = init_matrix(M, K);
+    // std::cout << "mkl: " << mkl(A, B, C) << "s" << std::endl;
 }
 
 void execute()
