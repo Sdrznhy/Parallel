@@ -1,2 +1,2 @@
-mpic++ ./src/mpiP2P.cpp -o ./bin/mpiP2P
-mpic++ ./src/mpiGrpMsg.cpp -o ./bin/mpiGrpMsg
+mpic++ ./src/mpiP2P.cpp -g -Wall -o ./bin/mpiP2P
+mpic++ ./src/mpiGrpMsg.cpp -g -Wall -o ./bin/mpiGrpMsg
