@@ -5,7 +5,7 @@ for size in 128 256 512 1024 2048
 do
     for np in 1 2 4 8 
     do
-        mpirun  -np $np ./bin/main $size | tee -a ./output/1_MPI_matrix_multiply.txt
+        mpirun  -np $np ./bin/mpiP2P $size | tee -a ./output/1_MPI_matrix_multiply.txt
     done
-    mpirun --use-hwthread-cpus -np 16 ./bin/main $size | tee -a ./output/1_MPI_matrix_multiply.txt
+    mpirun --use-hwthread-cpus -np 16 ./bin/mpiP2P $size | tee -a ./output/1_MPI_matrix_multiply.txt
 done
