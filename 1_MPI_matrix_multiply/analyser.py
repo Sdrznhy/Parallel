@@ -2,8 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# file = 'output/P2P.txt'
-file = 'output/GrpMsg.txt'
+file = 'output/P2P.txt'
+# file = 'output/GrpMsg.txt'
 # file = '1_MPI_matrix_multiply/output/P2P.txt'
 # file = '1_MPI_matrix_multiply/output/GrpMsg.txt'
 
@@ -14,7 +14,12 @@ data = pd.read_csv(file, sep=' ', names=['Matrix_size', 'Number_of_Processes', '
 grouped = data.groupby('Matrix_size')
 
 # 对每个组计算相对加速比，并重置索引
-relative_speedup = grouped.apply(lambda g: g[g['Number_of_Processes'] == 1]['Time'].values[0] / g['Time']).reset_index(drop=True)
+# relative_speedup = grouped.apply(
+#     lambda g: g[g['Number_of_Processes'] == 1]['Time'].values[0] / g['Time']).reset_index(drop=True)
+relative_speedup = grouped.apply(
+    lambda g: g[g['Number_of_Processes'] == 1]['Time'].values[0] / g['Time'],
+    include_groups=False
+).reset_index(drop=True)
 
 # 将相对加速比插入到 data DataFrame 中
 data['Relative_Speedup'] = relative_speedup
