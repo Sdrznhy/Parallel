@@ -9,5 +9,4 @@
 ```shell
 ./runP2P.sh
 ./runGrpMsg.sh
-
 ```
