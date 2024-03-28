@@ -54,15 +54,21 @@ int main(int argc, char **argv)
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &processNum);
 
-    double *matrixA = matrixGenerate(n, n);
-    double *matrixB = matrixGenerate(n, n);
-    double *matrixC = matrixGenerateZero(n, n);
+    // double *matrixA = matrixGenerate(n, n);
+    // double *matrixB = matrixGenerate(n, n);
+    // double *matrixC = matrixGenerateZero(n, n);
+    double *matrixA;
+    double *matrixB;
+    double *matrixC;
 
     if (processNum == 1) // 进程数为1，非并行
     {
         // double *matrixA = matrixGenerate(n, n);
         // double *matrixB = matrixGenerate(n, n);
         // double *matrixC = matrixGenerateZero(n, n);
+        matrixA = matrixGenerate(n, n);
+        matrixB = matrixGenerate(n, n);
+        matrixC = matrixGenerateZero(n, n);
 
         beginTime = MPI_Wtime();
         matrixMultiply(matrixA, matrixB, matrixC, n, n);
@@ -86,9 +92,9 @@ int main(int argc, char **argv)
         if (rank == 0)
         {
             // 生成矩阵
-            // double *matrixA = matrixGenerate(n, n);
-            // double *matrixB = matrixGenerate(n, n);
-            // double *matrixC = matrixGenerateZero(n, n);
+            matrixA = matrixGenerate(n, n);
+            matrixB = matrixGenerate(n, n);
+            matrixC = matrixGenerateZero(n, n);
 
             // 使用MPI_Bcast和MPI_Scatter发送数据
             beginTime = MPI_Wtime();
