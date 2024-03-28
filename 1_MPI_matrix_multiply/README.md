@@ -7,5 +7,7 @@
 运行
 
 ```shell
-./run.sh
+./runP2P.sh
+./runGrpMsg.sh
+
 ```
