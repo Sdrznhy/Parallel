@@ -2,9 +2,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-file = 'output/P2P.txt'
+# file = 'output/P2P.txt'
 # file = 'output/GrpMsg.txt'
-# file = '1_MPI_matrix_multiply/output/P2P.txt'
+file = '1_MPI_matrix_multiply/output/P2P.txt'
 # file = '1_MPI_matrix_multiply/output/GrpMsg.txt'
 
 # 读取数据
