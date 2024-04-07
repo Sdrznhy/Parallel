@@ -1,37 +1,25 @@
-2 total processes failed to start
-4 total processes failed to start
-8 total processes failed to start
-16 total processes failed to start
-2 total processes failed to start
-4 total processes failed to start
-8 total processes failed to start
-16 total processes failed to start
-2 total processes failed to start
-4 total processes failed to start
-8 total processes failed to start
-16 total processes failed to start
-2 total processes failed to start
-4 total processes failed to start
-8 total processes failed to start
-16 total processes failed to start
-2 total processes failed to start
-4 total processes failed to start
-8 total processes failed to start
-16 total processes failed to start
-128 1 0.00799386
-256 1 0.0700904
-512 1 0.58434
-128 1 0.00799754
-128 1 0.00861697
-256 1 0.065999
-512 1 0.525334
-128 1 0.00808856
-128 1 0.00899225
-128 1 0.0105929
-128 1 0.0100164
-128 1 0.0259186
-128 2 0.0147695
-128 4 0.00758276
-128 8 0.00472052
-128 16 0.083719
-256 1 0.0746752
+128 1 0.00467973
+128 2 0.0029902
+128 4 0.00168694
+128 8 0.00131068
+128 16 0.00183784
+256 1 0.0378501
+256 2 0.0187072
+256 4 0.0125185
+256 8 0.0100514
+256 16 0.00668514
+512 1 0.400723
+512 2 0.198959
+512 4 0.0983984
+512 8 0.0644381
+512 16 0.0654223
+1024 1 3.68922
+1024 2 1.86928
+1024 4 1.41404
+1024 8 0.774454
+1024 16 0.640979
+2048 1 141.994
+2048 2 78.5875
+2048 4 42.5357
+2048 8 22.6441
+2048 16 15.6647
