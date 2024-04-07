@@ -33,14 +33,13 @@ void matrixMultiply(double *matrixA, double *matrixB, double *matrixC, int row, 
         for (int j = 0; j < n; j++)
         {
             for (int k = 0; k < n; k++)
-                matrixC[i * n + j] = matrixA[i * n + k] * matrixB[k * n + j];
+                matrixC[i * n + j] += matrixA[i * n + k] * matrixB[k * n + j];
         }
     }
 }
 
 int main(int argc, char **argv)
 {
-    // std::cout << "Hello, World!" << std::endl;
     // 声明需要用到的参数
     int n = atoi(argv[1]); // 矩阵大小
     // int beginRow, endRow;      // 每个进程的计算范围
@@ -57,9 +56,9 @@ int main(int argc, char **argv)
     // double *matrixA = matrixGenerate(n, n);
     // double *matrixB = matrixGenerate(n, n);
     // double *matrixC = matrixGenerateZero(n, n);
-    double *matrixA;
-    double *matrixB;
-    double *matrixC;
+    double *matrixA = NULL;
+    double *matrixB = new double[n * n];
+    double *matrixC = NULL;
 
     if (processNum == 1) // 进程数为1，非并行
     {
@@ -87,7 +86,7 @@ int main(int argc, char **argv)
         int rows = n / processNum;
 
         double *localA = new double[rows * n];
-        double *localC = new double[rows * n];
+        double *localC = matrixGenerateZero(rows, n);
 
         if (rank == 0)
         {
@@ -97,10 +96,13 @@ int main(int argc, char **argv)
             matrixC = matrixGenerateZero(n, n);
 
             // 使用MPI_Bcast和MPI_Scatter发送数据
-            beginTime = MPI_Wtime();
-            MPI_Scatter(matrixA, rows * n, MPI_DOUBLE, localA, rows * n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
-            MPI_Bcast(matrixB, n * n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+            beginTime = MPI_Wtime();            
         }
+
+        // 分发数据
+        MPI_Scatter(matrixA, rows * n, MPI_DOUBLE, localA, rows * n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+        MPI_Bcast(matrixB, n * n, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+        
         // 所有进程都需要计算
         matrixMultiply(localA, matrixB, localC, rows, n);
 

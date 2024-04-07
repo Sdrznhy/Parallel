@@ -33,7 +33,7 @@ void matrixMultiply(double *matrixA, double *matrixB, double *matrixC, int row, 
         for (int j = 0; j < n; j++)
         {
             for (int k = 0; k < n; k++)
-                matrixC[i * n + j] = matrixA[i * n + k] * matrixB[k * n + j];
+                matrixC[i * n + j] += matrixA[i * n + k] * matrixB[k * n + j];
         }
     }
 }
