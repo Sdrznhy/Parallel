@@ -1,82 +1,76 @@
-#include <iostream>
-#include <stdlib.h>
 #include <ctime>
+#include <iostream>
 #include <pthread.h>
+#include <stdlib.h>
+#include <sys/time.h>
 
-int N;
-int tnum;
-int sum = 0;
-int numsPerThread;
-clock_t start, end;
-pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+#define MAX_THREADS 16
 
-struct arraySumArgs
+int N, nThreads; // 数组规模（百万），线程数
+int* A; // 数组指针
+long long totalSum = 0; // 总和
+pthread_mutex_t lock; // 互斥锁;
+
+// 线程求和函数
+void* sum(void* arg)
 {
-    int *A;
-    int threadID;
-    int localSum;
-};
+    long threadID = (long)arg;
+    // std::cout << threadID << " ";
+    long long localSum = 0; // 线程被分配的部分和
+    int numPerThread = N * 1000000 / nThreads;
+    int start = threadID * numPerThread;
+    int end = (threadID + 1) * numPerThread;
 
-int *arrayGen(int n)
-{
-    int *array = new int[n];
-    for (int i = 0; i < n; i++)
-    {
-        array[i] = rand() % 100;
+    for (int i = start; i < end; i++) {
+        localSum += A[i];
     }
-    return array;
-}
 
-void *arraySum(void *args)
-{
-    arraySumArgs *arg = (arraySumArgs *)args;
-    int *A = arg->A;
-    int threadID = arg->threadID;
-    arg->localSum = 0;
-
-    int start = threadID * numsPerThread;
-    int end = threadID == tnum - 1 ? N : (threadID + 1) * numsPerThread;
-
-    for (int i = start; i < end; i++)
-    {
-        arg->localSum += A[i];
-    }
+    // 使用互斥锁保证和的正确性
+    pthread_mutex_lock(&lock);
+    totalSum += localSum;
+    pthread_mutex_unlock(&lock);
 
     pthread_exit(NULL);
 }
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-    srand(12345);
-    N = atoi(argv[1]) * 1000000;
-    tnum = atoi(argv[2]);
-    numsPerThread = N / tnum;
+    N = atoi(argv[1]);
+    nThreads = atoi(argv[2]);
 
-    int *A = arrayGen(N);
-
-    pthread_t *threads = new pthread_t[tnum];
-    arraySumArgs *args = new arraySumArgs[tnum];
-
-    for (int i = 0; i < tnum; i++)
-    {
-        args[i].A = A;
-        args[i].threadID = i;
-        pthread_create(&threads[i], NULL, arraySum, (void *)&args[i]);
+    // 初始化随机数组A
+    A = new int[N * 1000000];
+    for (int i = 0; i < N * 1000000; i++) {
+        A[i] = rand() % 100;
     }
 
-    start = clock();
-    for (int i = 0; i < tnum; i++)
-    {
+    // 初始化互斥锁
+    pthread_mutex_init(&lock, NULL);
+
+    // 创建线程
+    pthread_t threads[MAX_THREADS];
+    int threadID[MAX_THREADS];
+
+    struct timeval start_time, end_time;
+    gettimeofday(&start_time, NULL);
+
+    // time_t start = clock();
+    for (long i = 0; i < nThreads; i++) {
+        threadID[i] = i;
+        pthread_create(&threads[i], NULL, sum, (void*)i);
+    }
+
+    for (int i = 0; i < nThreads; i++) {
         pthread_join(threads[i], NULL);
-        sum += args[i].localSum;
     }
-    end = clock();
-    std::cout << tnum << " " << N / 1000000 << " " 
-                << (double)(end - start) / CLOCKS_PER_SEC * 1000000 << std::endl;
+    gettimeofday(&end_time, NULL);
+    // time_t end = clock();
+    double time = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1000000.0;
 
+    // std::cout << N << " " << nThreads << " " << (double)(end - start) / CLOCKS_PER_SEC << std::endl;
+    std::cout << N << " " << nThreads << " " << time << std::endl;
+
+    pthread_mutex_destroy(&lock);
     delete[] A;
-    delete[] threads;
-    delete[] args;
-
     return 0;
 }

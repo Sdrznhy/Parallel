@@ -1,150 +1,97 @@
-# include <pthread.h>
-# include <iostream>
-# include <stdlib.h>
-# include <ctime>
+#include <pthread.h>
+#include <stdlib.h>
 
-int N;
-int tnum;
-// double *A, *B, *C;
+#include <ctime>
+#include <iostream>
 
-struct matrixMultiplyArgs
+#define MAX_THREADS 16
+
+int N; // 矩阵规模
+int nThreads; // 线程数
+
+// double *A, *B, *C; // 矩阵指针
+double **A, **B, **C;
+clock_t start, end;
+
+void matrixGenerate(double* matrix)
 {
-    double *A;
-    double *B;
-    double *C;
-    int threadID;
-} ;
-
-// 生成随机矩阵
-double *matrixGen(int row, int col)
-{
-    double *matrix = new double[row * col];
-    for (int i = 0; i < row * col; i++)
-    {
-        matrix[i] = double(rand() / 100);
+    for (int i = 0; i < N * N; i++) {
+        matrix[i] = double(rand() / 100.0);
     }
-    return matrix;
 }
 
-// 生成全0矩阵
-double *matrixGenZero(int row, int col)
+void matrixGenerate(double** matrix)
 {
-    double *matrix = new double[row * col];
-    for (int i = 0; i < row * col; i++)
-    {
-        matrix[i] = 0;
-    }
-    return matrix;
-}
-
-// 矩阵转置
-void matrixTranspose(double *matrix, int row, int col)
-{
-    double *temp = new double[row * col];
-    for (int i = 0; i < row; i++)
-    {
-        for (int j = 0; j < col; j++)
-        {
-            temp[j * row + i] = matrix[i * col + j];
+    for (int i = 0; i < N; i++) {
+        matrix[i] = new double[N];
+        for (int j = 0; j < N; j++) {
+            matrix[i][j] = double(rand() / 100.0);
         }
     }
-    for (int i = 0; i < row * col; i++)
-    {
-        matrix[i] = temp[i];
-    }
-    delete[] temp;
 }
 
-// 矩阵相乘
-void matrixMultiply(double *A, double *B, double *C, int m, int n, int k)
+void* multiply(void* arg)
 {
-    for (int i = 0; i < m; i++)
-    {
-        for (int j = 0; j < k; j++)
-        {
-            for (int l = 0; l < n; l++)
-            {
-                C[i * k + j] += A[i * n + l] * B[l * k + j];
+    int threadID = *(int*)arg;
+    int numPerThread = N / nThreads;
+    int start = threadID * numPerThread;
+    int end = (threadID + 1) * numPerThread;
+
+    // for (int i = start; i < end; i++) {
+    //     for (int j = 0; j < N; j++) {
+    //         C[i * N + j] = 0;
+    //         for (int k = 0; k < N; k++) {
+    //             C[i * N + j] += A[i * N + k] * B[k * N + j];
+    //         }
+    //     }
+    // }
+    for (int i = start; i < end; i++) {
+        for (int j = 0; j < N; j++) {
+            C[i][j] = 0;
+            for (int k = 0; k < N; k++) {
+                C[i][j] += A[i][k] * B[k][j];
             }
         }
     }
-}
-
-// 矩阵相乘的线程函数
-void *matrixMultiplyThread(void *arg)
-{
-    matrixMultiplyArgs *args = (matrixMultiplyArgs *)arg;
-    
-    int threadID = args->threadID;
-    double *A = args->A;
-    double *B = args->B;
-    double *C = args->C;
-    
-    int beginRow, endRow, rowsPerThread;
-    rowsPerThread = N / tnum;
-    beginRow = threadID * rowsPerThread;
-    endRow = (threadID == tnum - 1) ? N - 1 : beginRow + rowsPerThread - 1;
-
-    matrixMultiply(A + beginRow * N, B, C + beginRow * N, endRow - beginRow, N, N);
-
     pthread_exit(NULL);
 }
 
-
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-    // 声明变量
-    clock_t start, end;
-    pthread_t *threadID = NULL;
-    tnum = strtol(argv[1], NULL, 10);
-    N = strtol(argv[2], NULL, 10);
+    N = atoi(argv[1]);
+    nThreads = atoi(argv[2]);
 
-    double *A = matrixGen(N, N);
-    double *B = matrixGen(N, N);
-    double *C = matrixGenZero(N, N);
+    // A = new double[N * N];
+    // B = new double[N * N];
+    // C = new double[N * N];
+    A = new double*[N];
+    B = new double*[N];
+    C = new double*[N];
+    matrixGenerate(A);
+    matrixGenerate(B);
+    for (int i = 0; i < N; i++) {
+        C[i] = new double[N];
+    }
 
-    // int beginRow, endRow, rowsPerThread;
-
-    threadID = (pthread_t *)malloc(tnum * sizeof(pthread_t));
-
-    matrixMultiplyArgs args;
-    args.A = A;
-    args.B = B;
-    args.C = C;
-
-    // 计时开始
     start = clock();
-
-    // 使用Pthreads进行矩阵相乘
-    for (int i = 0; i < tnum; i++)
-    {
-        args.threadID = i;
-        pthread_create(&threadID[i], NULL, matrixMultiplyThread, (void *)&args);
+    pthread_t threads[MAX_THREADS];
+    int threadIDs[MAX_THREADS];
+    for (int i = 0; i < nThreads; i++) {
+        threadIDs[i] = i;
+        pthread_create(&threads[i], NULL, multiply, &threadIDs[i]);
     }
 
-    // // 计时开始
-    // start = clock();
-
-    // 回收线程
-    for (int i = 0; i < tnum; i++)
-    {
-        pthread_join(threadID[i], NULL);
+    for (int i = 0; i < nThreads; i++) {
+        pthread_join(threads[i], NULL);
     }
 
-    // 计时结束
     end = clock();
 
-    // 输出时间
-    std::cout << N << " " 
-                << tnum << " " 
-                << (double)(end - start) / CLOCKS_PER_SEC << " "
-                << std::endl;
+    std::cout << N << " " << nThreads << " " << (double)(end - start) / CLOCKS_PER_SEC << std::endl;
 
-    // 释放内存
-    free(A);
-    free(B);
-    free(C);
-    free(threadID);
+    delete[] A;
+    delete[] B;
+    delete[] C;
 
     return 0;
 }
