@@ -8,7 +8,7 @@ echo "matrix_size|thread_num|time used(s)"
 #         # ./bin/MatrixMultiply_GPT $size $np >> ./output/Matrix.txt
 #     done
 # done
-for round in {1..10}
+for round in {1..20}
 do
     for size in 128 256 512 1024 2048
     do
