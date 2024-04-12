@@ -10,3 +10,10 @@
 
 - 环境需求
     > Openmpi
+
+## lab2：MPI矩阵乘法进阶
+
+- 环境需求
+    > Openmpi
+
+## lab3：Pthread矩阵乘法与数组求和
