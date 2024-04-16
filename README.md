@@ -17,3 +17,5 @@
     > Openmpi
 
 ## lab3：Pthread矩阵乘法与数组求和
+
+## lab4：Pthread方程求解和求圆周率

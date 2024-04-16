@@ -6,6 +6,7 @@ file = "output/Array.txt"
 
 # 读取数据
 data = pd.read_csv(file, sep=" ", names=["Array_size", "Number_of_threads", "Time"])
+# print(data)
 
 # 按矩阵规模和进程数分组，计算平均时间
 grouped = data.groupby(["Array_size", "Number_of_threads"]).mean().reset_index()
