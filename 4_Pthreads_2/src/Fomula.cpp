@@ -106,10 +106,11 @@ int main()
     for (int i = 0; i < 100; i++) {
         solve();
     }
+    double x11 = x1, x22 = x2;
 
     gettimeofday(&end_time, NULL);
     double time1 = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1000000.0;
-    std::cout << "Time1: " << time1 << std::endl;
+    std::cout << "Serial: " << time1 << std::endl;
 
     pthread_t tid1, tid2, tid3, tid4;
 
@@ -128,5 +129,7 @@ int main()
 
     gettimeofday(&end_time, NULL);
     double time2 = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1000000.0;
-    std::cout << "Time2: " << time2 << std::endl;
+    std::cout << "Parallel: " << time2 << std::endl;
+    bool flag = (x11 == x1) && (x22 == x2);
+    std::cout << "Flag: " << flag << std::endl;
 }

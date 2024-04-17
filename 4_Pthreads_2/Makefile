@@ -25,8 +25,25 @@ MonteCarlo: src/MonteCarlo.cpp
 	done
 
 MonteCarloLoop: src/MonteCarlo.cpp
+	@echo "Compiling MonteCarlo..."
+	@$(CC) $(CFLAGS) -o bin/MonteCarlo src/MonteCarlo.cpp
+	@echo "Done!"
 	for round in 1 2 3 4 5 6 7 8 9 10; do \
-		make MonteCarlo; \
+		for size in $(size); do \
+			for np in $(np); do \
+				bin/MonteCarlo $$size $$np >> output/MonteCarlo.txt; \
+			done \
+		done \
+	done
+
+MonteCarloSingle: src/MonteCarlo.cpp
+	@echo "Compiling MonteCarlo..."
+	@$(CC) $(CFLAGS) -o bin/MonteCarlo src/MonteCarlo.cpp
+	@echo "Done!"
+	for round in 1 2 3 4 5 6 7 8 9 10; do \
+		for size in $(size); do \
+			bin/MonteCarlo $$size 1 >> output/loss.txt; \
+		done \
 	done
 
 clean:

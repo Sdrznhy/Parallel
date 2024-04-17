@@ -11,12 +11,13 @@
 
 #define MAX_THREADS 16
 
-int N; // 生成的点的个数
-int M; // 落在圆内的点的个数
+long long N; // 生成的点的个数
+long long M; // 落在圆内的点的个数
 double pi; // 估算出的π值
 int num_threads; // 线程的个数
 int num_per_process; // 每个线程需要计算的组数
 double *x, *y; // 随机数数组
+unsigned int seed = time(NULL);
 
 // 使用一个互斥锁保护count变量
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -29,7 +30,7 @@ struct timeval start_time, end_time;
 // 生成随机数
 double rand_double()
 {
-    return rand() / (double)RAND_MAX;
+    return (double)rand_r(&seed) / RAND_MAX;
 }
 
 // 初始化随机数数组
@@ -111,6 +112,7 @@ int main(int argc, char** argv)
     gettimeofday(&end_time, NULL);
     double time = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1000000.0;
 
-    // double loss = fabs(pi - M_PI);
-    std::cout << N << " " << num_threads << " " << time << std::endl;
+    double loss = fabs(pi - M_PI);
+    // std::cout << N << " " << num_threads << " " << time << std::endl;
+    std::cout << N << " " << loss << std::endl;
 }

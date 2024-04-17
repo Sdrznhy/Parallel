@@ -36,5 +36,5 @@ plt.ylabel("Speedup")
 plt.legend(title="Number of Threads", loc="upper left")
 plt.show()
 
-
-
+# 输出图像
+# plt.savefig("assets/figure8.png")
