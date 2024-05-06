@@ -17,5 +17,17 @@ clean:
 run:
 	@LD_LIBRARY_PATH=build bin/heated_plate_pthreads
 
+runloop:
+	@for np in 1 2 4 8 16; do \
+		echo "Running with $$np threads"; \
+		LD_LIBRARY_PATH=build bin/heated_plate_pthreads $$np; \
+	done
+
 reference:
 	@bin/heated_plate_openmp
+
+referenceloop:
+	@for np in 1 2 4 8 16; do \
+		echo "Running with $$np threads"; \
+		bin/heated_plate_openmp $$np; \
+	done

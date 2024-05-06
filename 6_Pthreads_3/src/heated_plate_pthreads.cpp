@@ -112,6 +112,7 @@ void* calculate_diff(int i, void* arg)
 
 int main(int argc, char* argv[])
 {
+    int n_threads = argc > 1 ? atoi(argv[1]) : 1;
     // 存储在两次迭代之间的最大温度差，被发配去当全局变量了
     // double diff;
 
@@ -150,23 +151,23 @@ int main(int argc, char* argv[])
     mean = 0.0;
 
     // 初始化互斥锁
-    // for (int i = 0; i < MAX_THREADS; i++) {
+    // for (int i = 0; i < n_threads; i++) {
     //     pthread_mutex_init(&mutex[i], NULL);
     // }
 
     // init, which corresponds with line 137-166 in heated_plate_openmp.c
-    parallel_for(1, M - 1, 1, init_i, NULL, MAX_THREADS);
-    parallel_for(0, N, 1, init_j, NULL, MAX_THREADS);
+    parallel_for(1, M - 1, 1, init_i, NULL, n_threads);
+    parallel_for(0, N, 1, init_j, NULL, n_threads);
 
     // Average the boundary values, to come up with a reasonable
     // initial value for the interior.
-    parallel_for(1, M - 1, 1, calculate_mean_i, NULL, MAX_THREADS);
+    parallel_for(1, M - 1, 1, calculate_mean_i, NULL, n_threads);
 
-    parallel_for(0, N, 1, calculate_mean_j, NULL, MAX_THREADS);
+    parallel_for(0, N, 1, calculate_mean_j, NULL, n_threads);
 
     // 规约并计算平均值
     // 对应line 173-175 in heated_plate_openmp.c
-    for (int i = 0; i < MAX_THREADS; i++) {
+    for (int i = 0; i < n_threads; i++) {
         mean += my_mean[i];
     }
     mean = mean / (2 * M + 2 * N - 4);
@@ -175,7 +176,7 @@ int main(int argc, char* argv[])
 
     // 使用平均值初始化内部网格
     // 对应line 179-187 in heated_plate_openmp.c
-    parallel_for(1, M - 1, 1, init_interior, NULL, MAX_THREADS);
+    parallel_for(1, M - 1, 1, init_interior, NULL, n_threads);
 
     // line 188-199 in heated_plate_openmp.c
     // 照搬过来
@@ -196,22 +197,22 @@ int main(int argc, char* argv[])
         // #pragma omp parallel shared(u, w) private(i, j)
 
         // line 208-211
-        parallel_for(0, M, 1, copy_w_to_u, NULL, MAX_THREADS);
+        parallel_for(0, M, 1, copy_w_to_u, NULL, n_threads);
         // std::cout << "hello" << std::endl;
         // line 218-222
-        parallel_for(1, M - 1, 1, generate_w, NULL, MAX_THREADS);
+        parallel_for(1, M - 1, 1, generate_w, NULL, n_threads);
         // std::cout << "hello" << std::endl;
         // line 231
         diff = 0.0;
 
-        for (int i = 0; i < MAX_THREADS; i++) {
+        for (int i = 0; i < n_threads; i++) {
             my_diff[i] = 0.0;
         }
         // line 233-249
-        parallel_for(1, M - 1, 1, calculate_diff, NULL, MAX_THREADS);
+        parallel_for(1, M - 1, 1, calculate_diff, NULL, n_threads);
         // std::cout << "hello" << std::endl;
         // 得到最大温度差
-        for (int i = 0; i < MAX_THREADS; i++) {
+        for (int i = 0; i < n_threads; i++) {
             if (diff < my_diff[i]) {
                 diff = my_diff[i];
             }
@@ -220,9 +221,9 @@ int main(int argc, char* argv[])
         iterations++;
         if (iterations == iterations_print) {
             double wtime_mid = omp_get_wtime() - wtime;
-            printf("  %8d  %f\n", iterations, diff);
-            std::ofstream file("output/heated_plate_pthreads.txt", std::ios::app);
-            file << iterations << " " << wtime_mid << std::endl;
+            // printf("  %8d  %f\n", iterations, diff);
+            // std::ofstream file("output/heated_plate_pthreads.txt", std::ios::app);
+            // file << iterations << " " << wtime_mid << std::endl;
             iterations_print
                 = 2 * iterations_print;
         }
@@ -241,6 +242,9 @@ int main(int argc, char* argv[])
     printf("\n");
     printf("HEATED_PLATE_OPENMP:\n");
     printf("  Normal end of execution.\n");
+
+    std::ofstream file("output/heated_plate_pthreads.txt", std::ios::app);
+    file << n_threads << " " << wtime << std::endl;
 
     return 0;
 }
