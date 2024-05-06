@@ -20,9 +20,6 @@ double diff;
 double my_mean[MAX_THREADS] = { 0 };
 double my_diff[MAX_THREADS] = { 0 };
 
-// 互斥锁
-pthread_mutex_t mutex[MAX_THREADS];
-
 // init, which corresponds with line 137-153 in heated_plate_openmp.c
 void* init_i(int i, void* arg)
 {
