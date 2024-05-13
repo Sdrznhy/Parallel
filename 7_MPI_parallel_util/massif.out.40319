@@ -1,0 +1,1057 @@
+desc: (none)
+cmd: ./bin/fft_serial --stacks=yes--detailed-freq=1 --threshold=0 --max-snapshots=256 --heap-admin=0 --time-unit=B
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=2277774
+mem_heap_B=72704
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=2386292
+mem_heap_B=72719
+mem_heap_extra_B=17
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=2386399
+mem_heap_B=73191
+mem_heap_extra_B=33
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=2387053
+mem_heap_B=77287
+mem_heap_extra_B=41
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=2387971
+mem_heap_B=77590
+mem_heap_extra_B=50
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=2389646
+mem_heap_B=77590
+mem_heap_extra_B=50
+mem_stacks_B=0
+heap_tree=detailed
+n3: 77590 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n1: 4096 0x4BF0BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n1: 4096 0x4BFFCDF: _IO_doallocbuf (genops.c:347)
+   n1: 4096 0x4BFD4C3: _IO_file_xsgetn (fileops.c:1287)
+    n1: 4096 0x4BFC1F3: fread_unlocked (iofread_u.c:40)
+     n1: 4096 0x4C4D95B: __tzfile_read (tzfile.c:182)
+      n1: 4096 0x4C4CC23: tzset_internal (tzset.c:405)
+       n1: 4096 0x4C4D5A6: __tz_convert (tzset.c:577)
+        n1: 4096 0x10A594: timestamp() (fft_serial.cpp:572)
+         n0: 4096 0x1093C7: main (fft_serial.cpp:76)
+ n0: 790 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=7
+#-----------
+time=2389772
+mem_heap_B=73022
+mem_heap_extra_B=26
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=2389843
+mem_heap_B=73042
+mem_heap_extra_B=46
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=2389997
+mem_heap_B=73062
+mem_heap_extra_B=66
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=2390190
+mem_heap_B=73082
+mem_heap_extra_B=86
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=2397748
+mem_heap_B=74106
+mem_heap_extra_B=94
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=2405391
+mem_heap_B=74122
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=2405523
+mem_heap_B=74218
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n3: 74218 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n1: 1024 0x4BF0BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 1024 0x4BFFCDF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4BFEF5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x4BFD6D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x4BFD6D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x4BF1FD6: fwrite (iofwrite.c:39)
+       n1: 1024 0x499BB64: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+        n1: 1024 0x499BEBA: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+         n1: 1024 0x10A5D6: timestamp() (fft_serial.cpp:576)
+          n0: 1024 0x1093C7: main (fft_serial.cpp:76)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 490 in 9 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=14
+#-----------
+time=9136957
+mem_heap_B=74202
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=9137096
+mem_heap_B=74138
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=9137228
+mem_heap_B=74330
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=30319382
+mem_heap_B=74298
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=30319521
+mem_heap_B=74170
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=30319653
+mem_heap_B=74554
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=74867782
+mem_heap_B=74490
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=74867921
+mem_heap_B=74234
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=74868053
+mem_heap_B=75002
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=193012197
+mem_heap_B=74874
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=193012336
+mem_heap_B=74362
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=193012468
+mem_heap_B=75898
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=218248043
+mem_heap_B=75642
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=218248109
+mem_heap_B=74618
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=218248182
+mem_heap_B=74618
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=218248314
+mem_heap_B=77690
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n6: 77690 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 1024 0x10958E: main (fft_serial.cpp:109)
+ n0: 1024 0x1095BE: main (fft_serial.cpp:110)
+ n0: 1024 0x1095EE: main (fft_serial.cpp:111)
+ n1: 1024 0x4BF0BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 1024 0x4BFFCDF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4BFEF5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x4BFD6D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x4BFD6D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x4BF1FD6: fwrite (iofwrite.c:39)
+       n1: 1024 0x499BB64: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+        n1: 1024 0x499BEBA: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+         n1: 1024 0x10A5D6: timestamp() (fft_serial.cpp:576)
+          n0: 1024 0x1093C7: main (fft_serial.cpp:76)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 890 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=30
+#-----------
+time=281079463
+mem_heap_B=77178
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=281079529
+mem_heap_B=75130
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=281079602
+mem_heap_B=75130
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=281079734
+mem_heap_B=81274
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=414423201
+mem_heap_B=81274
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n7: 81274 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 2048 0x10958E: main (fft_serial.cpp:109)
+ n0: 2048 0x1095BE: main (fft_serial.cpp:110)
+ n0: 2048 0x1095EE: main (fft_serial.cpp:111)
+ n0: 1024 0x10955E: main (fft_serial.cpp:108)
+ n1: 1024 0x4BF0BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 1024 0x4BFFCDF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4BFEF5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x4BFD6D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x4BFD6D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x4BF1FD6: fwrite (iofwrite.c:39)
+       n1: 1024 0x499BB64: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+        n1: 1024 0x499BEBA: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+         n1: 1024 0x10A5D6: timestamp() (fft_serial.cpp:576)
+          n0: 1024 0x1093C7: main (fft_serial.cpp:76)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 378 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=414423267
+mem_heap_B=76154
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=414423340
+mem_heap_B=76154
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=414423472
+mem_heap_B=88442
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=732199022
+mem_heap_B=88442
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n7: 88442 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 4096 0x10958E: main (fft_serial.cpp:109)
+ n0: 4096 0x1095BE: main (fft_serial.cpp:110)
+ n0: 4096 0x1095EE: main (fft_serial.cpp:111)
+ n0: 2048 0x10955E: main (fft_serial.cpp:108)
+ n1: 1024 0x4BF0BA3: _IO_file_doallocate (filedoalloc.c:101)
+  n2: 1024 0x4BFFCDF: _IO_doallocbuf (genops.c:347)
+   n1: 1024 0x4BFEF5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
+    n1: 1024 0x4BFD6D4: _IO_new_file_xsputn (fileops.c:1243)
+     n1: 1024 0x4BFD6D4: _IO_file_xsputn@@GLIBC_2.2.5 (fileops.c:1196)
+      n1: 1024 0x4BF1FD6: fwrite (iofwrite.c:39)
+       n1: 1024 0x499BB64: std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+        n1: 1024 0x499BEBA: std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+         n1: 1024 0x10A5D6: timestamp() (fft_serial.cpp:576)
+          n0: 1024 0x1093C7: main (fft_serial.cpp:76)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+ n0: 378 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=39
+#-----------
+time=732199088
+mem_heap_B=78202
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=732199161
+mem_heap_B=78202
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=732199293
+mem_heap_B=102778
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=800152757
+mem_heap_B=102778
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n6: 102778 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 8192 0x10958E: main (fft_serial.cpp:109)
+ n0: 8192 0x1095BE: main (fft_serial.cpp:110)
+ n0: 8192 0x1095EE: main (fft_serial.cpp:111)
+ n0: 4096 0x10955E: main (fft_serial.cpp:108)
+ n0: 1402 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=43
+#-----------
+time=800152823
+mem_heap_B=82298
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=800152896
+mem_heap_B=82298
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=800153028
+mem_heap_B=131450
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=956937289
+mem_heap_B=131450
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n6: 131450 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 16384 0x10958E: main (fft_serial.cpp:109)
+ n0: 16384 0x1095BE: main (fft_serial.cpp:110)
+ n0: 16384 0x1095EE: main (fft_serial.cpp:111)
+ n0: 8192 0x10955E: main (fft_serial.cpp:108)
+ n0: 1402 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=956937355
+mem_heap_B=90490
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=956937428
+mem_heap_B=90490
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=956937516
+mem_heap_B=156026
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=1284191997
+mem_heap_B=188794
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n6: 188794 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 32768 0x10958E: main (fft_serial.cpp:109)
+ n0: 32768 0x1095BE: main (fft_serial.cpp:110)
+ n0: 32768 0x1095EE: main (fft_serial.cpp:111)
+ n0: 16384 0x10955E: main (fft_serial.cpp:108)
+ n0: 1402 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=51
+#-----------
+time=1284192063
+mem_heap_B=106874
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=1284192136
+mem_heap_B=106874
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=1284192224
+mem_heap_B=237946
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=2022516720
+mem_heap_B=303482
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n6: 303482 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 65536 0x10958E: main (fft_serial.cpp:109)
+ n0: 65536 0x1095BE: main (fft_serial.cpp:110)
+ n0: 65536 0x1095EE: main (fft_serial.cpp:111)
+ n0: 32768 0x10955E: main (fft_serial.cpp:108)
+ n0: 1402 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=55
+#-----------
+time=2022516786
+mem_heap_B=139642
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=2022516859
+mem_heap_B=139642
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=2022516947
+mem_heap_B=401786
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=2196931074
+mem_heap_B=532858
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n6: 532858 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 131072 0x10958E: main (fft_serial.cpp:109)
+ n0: 131072 0x1095BE: main (fft_serial.cpp:110)
+ n0: 131072 0x1095EE: main (fft_serial.cpp:111)
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 65536 0x10955E: main (fft_serial.cpp:108)
+ n0: 1402 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=59
+#-----------
+time=2196931140
+mem_heap_B=205178
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=2196931213
+mem_heap_B=205178
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=2196931301
+mem_heap_B=729466
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=2582364383
+mem_heap_B=991610
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n6: 991610 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 262144 0x10958E: main (fft_serial.cpp:109)
+ n0: 262144 0x1095BE: main (fft_serial.cpp:110)
+ n0: 262144 0x1095EE: main (fft_serial.cpp:111)
+ n0: 131072 0x10955E: main (fft_serial.cpp:108)
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 1402 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=63
+#-----------
+time=2582364449
+mem_heap_B=336250
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=2582364522
+mem_heap_B=336250
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=2582364610
+mem_heap_B=1384826
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=3377122043
+mem_heap_B=1909114
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n6: 1909114 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 524288 0x10958E: main (fft_serial.cpp:109)
+ n0: 524288 0x1095BE: main (fft_serial.cpp:110)
+ n0: 524288 0x1095EE: main (fft_serial.cpp:111)
+ n0: 262144 0x10955E: main (fft_serial.cpp:108)
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 1402 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=67
+#-----------
+time=3377122109
+mem_heap_B=598394
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=3377122182
+mem_heap_B=598394
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=3377122270
+mem_heap_B=2695546
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=5113180297
+mem_heap_B=3744122
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n6: 3744122 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 1048576 0x10958E: main (fft_serial.cpp:109)
+ n0: 1048576 0x1095BE: main (fft_serial.cpp:110)
+ n0: 1048576 0x1095EE: main (fft_serial.cpp:111)
+ n0: 524288 0x10955E: main (fft_serial.cpp:108)
+ n1: 72704 0x4909939: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30)
+  n1: 72704 0x400647D: call_init.part.0 (dl-init.c:70)
+   n1: 72704 0x4006567: call_init (dl-init.c:33)
+    n1: 72704 0x4006567: _dl_init (dl-init.c:117)
+     n1: 72704 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+      n1: 72704 0x5: ???
+       n1: 72704 0x1FFEFFFFF6: ???
+        n1: 72704 0x1FFF000007: ???
+         n1: 72704 0x1FFF000025: ???
+          n1: 72704 0x1FFF000033: ???
+           n1: 72704 0x1FFF000047: ???
+            n0: 72704 0x1FFF000056: ???
+ n0: 1402 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=71
+#-----------
+time=5113180363
+mem_heap_B=1122682
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=5113180436
+mem_heap_B=1122682
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=5113180524
+mem_heap_B=5316986
+mem_heap_extra_B=118
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=5873431598
+mem_heap_B=7414138
+mem_heap_extra_B=126
+mem_stacks_B=0
+heap_tree=detailed
+n5: 7414138 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 2097152 0x10958E: main (fft_serial.cpp:109)
+ n0: 2097152 0x1095BE: main (fft_serial.cpp:110)
+ n0: 2097152 0x1095EE: main (fft_serial.cpp:111)
+ n0: 1048576 0x10955E: main (fft_serial.cpp:108)
+ n0: 74106 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=75
+#-----------
+time=5873431664
+mem_heap_B=2171258
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=5873431737
+mem_heap_B=2171258
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=5873431825
+mem_heap_B=10559866
+mem_heap_extra_B=8182
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=7500819333
+mem_heap_B=14754170
+mem_heap_extra_B=12222
+mem_stacks_B=0
+heap_tree=detailed
+n5: 14754170 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 4194304 0x10958E: main (fft_serial.cpp:109)
+ n0: 4194304 0x1095BE: main (fft_serial.cpp:110)
+ n0: 4194304 0x1095EE: main (fft_serial.cpp:111)
+ n0: 2097152 0x10955E: main (fft_serial.cpp:108)
+ n0: 74106 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=79
+#-----------
+time=7500819399
+mem_heap_B=4268410
+mem_heap_extra_B=4134
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=7500819472
+mem_heap_B=4268410
+mem_heap_extra_B=4134
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=7500819560
+mem_heap_B=21045626
+mem_heap_extra_B=12214
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=82
+#-----------
+time=10828509461
+mem_heap_B=29434234
+mem_heap_extra_B=16254
+mem_stacks_B=0
+heap_tree=detailed
+n5: 29434234 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 8388608 0x10958E: main (fft_serial.cpp:109)
+ n0: 8388608 0x1095BE: main (fft_serial.cpp:110)
+ n0: 8388608 0x1095EE: main (fft_serial.cpp:111)
+ n0: 4194304 0x10955E: main (fft_serial.cpp:108)
+ n0: 74106 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=83
+#-----------
+time=10828509527
+mem_heap_B=8462714
+mem_heap_extra_B=4134
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=10828509600
+mem_heap_B=8462714
+mem_heap_extra_B=4134
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=10828509688
+mem_heap_B=42017146
+mem_heap_extra_B=12214
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=17900338574
+mem_heap_B=58794362
+mem_heap_extra_B=16254
+mem_stacks_B=0
+heap_tree=peak
+n5: 58794362 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 16777216 0x10958E: main (fft_serial.cpp:109)
+ n0: 16777216 0x1095BE: main (fft_serial.cpp:110)
+ n0: 16777216 0x1095EE: main (fft_serial.cpp:111)
+ n0: 8388608 0x10955E: main (fft_serial.cpp:108)
+ n0: 74106 in 7 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=87
+#-----------
+time=17900338640
+mem_heap_B=16851322
+mem_heap_extra_B=4134
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=17900340820
+mem_heap_B=74091
+mem_heap_extra_B=85
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=17900357094
+mem_heap_B=1402
+mem_heap_extra_B=86
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=17900358198
+mem_heap_B=378
+mem_heap_extra_B=78
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=17900358281
+mem_heap_B=358
+mem_heap_extra_B=58
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=92
+#-----------
+time=17900358349
+mem_heap_B=318
+mem_heap_extra_B=18
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=93
+#-----------
+time=17900359531
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty

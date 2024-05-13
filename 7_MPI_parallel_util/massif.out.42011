@@ -1,0 +1,823 @@
+desc: (none)
+cmd: bin/fft_parallel 20 --stacks=yes--detailed-freq=1 --threshold=0 --max-snapshots=256 --heap-admin=0 --time-unit=B
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=4574877
+mem_heap_B=58795420
+mem_heap_extra_B=16228
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=577998798
+mem_heap_B=58795460
+mem_heap_extra_B=16244
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=753234032
+mem_heap_B=70356785
+mem_heap_extra_B=222143
+mem_stacks_B=0
+heap_tree=peak
+n8: 70356785 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 16777216 0x11193C: main (fft_parallel.cpp:62)
+ n0: 16777216 0x11196C: main (fft_parallel.cpp:63)
+ n0: 16777216 0x11199C: main (fft_parallel.cpp:64)
+ n0: 8388608 0x11190C: main (fft_parallel.cpp:61)
+ n1: 4194304 0x112746: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:296)
+  n1: 4194304 0x11239E: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:223)
+   n0: 4194304 0x111B15: main (fft_parallel.cpp:83)
+ n1: 4194304 0x112778: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:297)
+  n1: 4194304 0x11239E: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:223)
+   n0: 4194304 0x111B15: main (fft_parallel.cpp:83)
+ n0: 1635233 in 760 places, all below massif's threshold (1.00%)
+ n2: 1612688 0x4F3836F: opal_free_list_grow_st (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+  n1: 1051256 0xD9040F3: ???
+   n1: 1051256 0x4F80851: mca_btl_base_select (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+    n1: 1051256 0xD8F71D7: ???
+     n1: 1051256 0x4910C23: mca_bml_base_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+      n1: 1051256 0x4960803: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+       n1: 1051256 0x48F9C21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+        n0: 1051256 0x111AB4: main (fft_parallel.cpp:77)
+  n0: 561432 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=4
+#-----------
+time=854159876
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=958102807
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=1059358761
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=1159271228
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1357416801
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=1554806662
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=1752007595
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=1949161296
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=2146303189
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=2343442130
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=2540580333
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=2683192001
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=2796962981
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=detailed
+n8: 70356781 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 16777216 0x11193C: main (fft_parallel.cpp:62)
+ n0: 16777216 0x11196C: main (fft_parallel.cpp:63)
+ n0: 16777216 0x11199C: main (fft_parallel.cpp:64)
+ n0: 8388608 0x11190C: main (fft_parallel.cpp:61)
+ n2: 4194304 0x112746: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:296)
+  n2: 4194304 0x11239E: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:223)
+   n0: 4194304 0x111B44: main (fft_parallel.cpp:85)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n2: 4194304 0x112778: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:297)
+  n2: 4194304 0x11239E: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:223)
+   n0: 4194304 0x111B44: main (fft_parallel.cpp:85)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n0: 1635229 in 760 places, all below massif's threshold (1.00%)
+ n2: 1612688 0x4F3836F: opal_free_list_grow_st (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+  n1: 1051256 0xD9040F3: ???
+   n1: 1051256 0x4F80851: mca_btl_base_select (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+    n1: 1051256 0xD8F71D7: ???
+     n1: 1051256 0x4910C23: mca_bml_base_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+      n1: 1051256 0x4960803: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+       n1: 1051256 0x48F9C21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+        n0: 1051256 0x111AB4: main (fft_parallel.cpp:77)
+  n0: 561432 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=17
+#-----------
+time=2907328441
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=3011795660
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=3113313758
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=3213357297
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=3411601174
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=3609015611
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=3806222688
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=detailed
+n8: 70356781 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 16777216 0x11193C: main (fft_parallel.cpp:62)
+ n0: 16777216 0x11196C: main (fft_parallel.cpp:63)
+ n0: 16777216 0x11199C: main (fft_parallel.cpp:64)
+ n0: 8388608 0x11190C: main (fft_parallel.cpp:61)
+ n2: 4194304 0x112746: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:296)
+  n2: 4194304 0x11248C: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:235)
+   n0: 4194304 0x111B44: main (fft_parallel.cpp:85)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n2: 4194304 0x112778: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:297)
+  n2: 4194304 0x11248C: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:235)
+   n0: 4194304 0x111B44: main (fft_parallel.cpp:85)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n0: 1635229 in 760 places, all below massif's threshold (1.00%)
+ n2: 1612688 0x4F3836F: opal_free_list_grow_st (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+  n1: 1051256 0xD9040F3: ???
+   n1: 1051256 0x4F80851: mca_btl_base_select (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+    n1: 1051256 0xD8F71D7: ???
+     n1: 1051256 0x4910C23: mca_bml_base_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+      n1: 1051256 0x4960803: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+       n1: 1051256 0x48F9C21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+        n0: 1051256 0x111AB4: main (fft_parallel.cpp:77)
+  n0: 561432 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=24
+#-----------
+time=4003377925
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=4200520202
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=4397659239
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=4594797466
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=4737409138
+mem_heap_B=70356781
+mem_heap_extra_B=222123
+mem_stacks_B=0
+heap_tree=detailed
+n8: 70356781 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 16777216 0x11193C: main (fft_parallel.cpp:62)
+ n0: 16777216 0x11196C: main (fft_parallel.cpp:63)
+ n0: 16777216 0x11199C: main (fft_parallel.cpp:64)
+ n0: 8388608 0x11190C: main (fft_parallel.cpp:61)
+ n2: 4194304 0x112746: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:296)
+  n2: 4194304 0x112533: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:247)
+   n0: 4194304 0x111B44: main (fft_parallel.cpp:85)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n2: 4194304 0x112778: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:297)
+  n2: 4194304 0x112533: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:247)
+   n0: 4194304 0x111B44: main (fft_parallel.cpp:85)
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n0: 1635229 in 760 places, all below massif's threshold (1.00%)
+ n2: 1612688 0x4F3836F: opal_free_list_grow_st (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+  n1: 1051256 0xD9040F3: ???
+   n1: 1051256 0x4F80851: mca_btl_base_select (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+    n1: 1051256 0xD8F71D7: ???
+     n1: 1051256 0x4910C23: mca_bml_base_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+      n1: 1051256 0x4960803: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+       n1: 1051256 0x48F9C21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+        n0: 1051256 0x111AB4: main (fft_parallel.cpp:77)
+  n0: 561432 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=29
+#-----------
+time=5103193267
+mem_heap_B=61969193
+mem_heap_extra_B=214031
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=5250379165
+mem_heap_B=66163497
+mem_heap_extra_B=218071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=5362052607
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=5479760531
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=5676568376
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=5776480843
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=5974626416
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=6172016277
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=6369217210
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=6566370911
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=6763512804
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=6960651745
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=7157789948
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=7300401616
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=7414172596
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=7524538056
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=7629005275
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=7730523373
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=detailed
+n8: 70357805 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 16777216 0x11193C: main (fft_parallel.cpp:62)
+ n0: 16777216 0x11196C: main (fft_parallel.cpp:63)
+ n0: 16777216 0x11199C: main (fft_parallel.cpp:64)
+ n0: 8388608 0x11190C: main (fft_parallel.cpp:61)
+ n2: 4194304 0x112746: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:296)
+  n2: 4194304 0x112420: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:232)
+   n0: 4194304 0x111EBA: main (fft_parallel.cpp:120)
+   n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n2: 4194304 0x112778: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:297)
+  n2: 4194304 0x112420: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:232)
+   n0: 4194304 0x111EBA: main (fft_parallel.cpp:120)
+   n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n0: 1636253 in 760 places, all below massif's threshold (1.00%)
+ n2: 1612688 0x4F3836F: opal_free_list_grow_st (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+  n1: 1051256 0xD9040F3: ???
+   n1: 1051256 0x4F80851: mca_btl_base_select (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+    n1: 1051256 0xD8F71D7: ???
+     n1: 1051256 0x4910C23: mca_bml_base_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+      n1: 1051256 0x4960803: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+       n1: 1051256 0x48F9C21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+        n0: 1051256 0x111AB4: main (fft_parallel.cpp:77)
+  n0: 561432 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=47
+#-----------
+time=7830566912
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=7929873170
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=8028810789
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=8037201829
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=8127564087
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=8135955127
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=8226225226
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=detailed
+n8: 70357805 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 16777216 0x11193C: main (fft_parallel.cpp:62)
+ n0: 16777216 0x11196C: main (fft_parallel.cpp:63)
+ n0: 16777216 0x11199C: main (fft_parallel.cpp:64)
+ n0: 8388608 0x11190C: main (fft_parallel.cpp:61)
+ n2: 4194304 0x112746: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:296)
+  n2: 4194304 0x11248C: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:235)
+   n0: 4194304 0x111EBA: main (fft_parallel.cpp:120)
+   n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n2: 4194304 0x112778: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:297)
+  n2: 4194304 0x11248C: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:235)
+   n0: 4194304 0x111EBA: main (fft_parallel.cpp:120)
+   n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n0: 1636253 in 760 places, all below massif's threshold (1.00%)
+ n2: 1612688 0x4F3836F: opal_free_list_grow_st (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+  n1: 1051256 0xD9040F3: ???
+   n1: 1051256 0x4F80851: mca_btl_base_select (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+    n1: 1051256 0xD8F71D7: ???
+     n1: 1051256 0x4910C23: mca_bml_base_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+      n1: 1051256 0x4960803: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+       n1: 1051256 0x48F9C21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+        n0: 1051256 0x111AB4: main (fft_parallel.cpp:77)
+  n0: 561432 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=54
+#-----------
+time=8234616266
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=8324840284
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=8333231324
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=8423432303
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=8431823343
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=8522012801
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=8530403841
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=8620587540
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=8628978580
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=8719159398
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=detailed
+n8: 70357805 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 16777216 0x11193C: main (fft_parallel.cpp:62)
+ n0: 16777216 0x11196C: main (fft_parallel.cpp:63)
+ n0: 16777216 0x11199C: main (fft_parallel.cpp:64)
+ n0: 8388608 0x11190C: main (fft_parallel.cpp:61)
+ n2: 4194304 0x112746: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:296)
+  n2: 4194304 0x112420: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:232)
+   n0: 4194304 0x111EBA: main (fft_parallel.cpp:120)
+   n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n2: 4194304 0x112778: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:297)
+  n2: 4194304 0x112420: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:232)
+   n0: 4194304 0x111EBA: main (fft_parallel.cpp:120)
+   n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n0: 1636253 in 760 places, all below massif's threshold (1.00%)
+ n2: 1612688 0x4F3836F: opal_free_list_grow_st (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+  n1: 1051256 0xD9040F3: ???
+   n1: 1051256 0x4F80851: mca_btl_base_select (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+    n1: 1051256 0xD8F71D7: ???
+     n1: 1051256 0x4910C23: mca_bml_base_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+      n1: 1051256 0x4960803: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+       n1: 1051256 0x48F9C21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+        n0: 1051256 0x111AB4: main (fft_parallel.cpp:77)
+  n0: 561432 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=64
+#-----------
+time=8727550438
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=8817729817
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=8826120857
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=8916299515
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=8924690555
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=9014868854
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=9023259894
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=9113438012
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=9121829052
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=9212007081
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=detailed
+n8: 70357805 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n0: 16777216 0x11193C: main (fft_parallel.cpp:62)
+ n0: 16777216 0x11196C: main (fft_parallel.cpp:63)
+ n0: 16777216 0x11199C: main (fft_parallel.cpp:64)
+ n0: 8388608 0x11190C: main (fft_parallel.cpp:61)
+ n2: 4194304 0x112746: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:296)
+  n2: 4194304 0x11248C: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:235)
+   n0: 4194304 0x111EBA: main (fft_parallel.cpp:120)
+   n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n2: 4194304 0x112778: step(int, int, double*, double*, double*, double*, double*, double) (fft_parallel.cpp:297)
+  n2: 4194304 0x11248C: cfft2(int, double*, double*, double*, double) (fft_parallel.cpp:235)
+   n0: 4194304 0x111EBA: main (fft_parallel.cpp:120)
+   n0: 0 in 3 places, all below massif's threshold (1.00%)
+  n0: 0 in 3 places, all below massif's threshold (1.00%)
+ n0: 1636253 in 760 places, all below massif's threshold (1.00%)
+ n2: 1612688 0x4F3836F: opal_free_list_grow_st (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+  n1: 1051256 0xD9040F3: ???
+   n1: 1051256 0x4F80851: mca_btl_base_select (in /usr/lib/x86_64-linux-gnu/libopen-pal.so.40.30.2)
+    n1: 1051256 0xD8F71D7: ???
+     n1: 1051256 0x4910C23: mca_bml_base_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+      n1: 1051256 0x4960803: ompi_mpi_init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+       n1: 1051256 0x48F9C21: PMPI_Init (in /usr/lib/x86_64-linux-gnu/libmpi.so.40.30.2)
+        n0: 1051256 0x111AB4: main (fft_parallel.cpp:77)
+  n0: 561432 in 11 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=74
+#-----------
+time=9220398121
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=9256050034
+mem_heap_B=66163497
+mem_heap_extra_B=218071
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=9346227713
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=9354618753
+mem_heap_B=70357805
+mem_heap_extra_B=222131
+mem_stacks_B=0
+heap_tree=empty

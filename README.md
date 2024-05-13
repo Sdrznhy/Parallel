@@ -23,3 +23,5 @@
 ## lab5：OpenMP矩阵乘法
 
 ## lab6：Pthreads并行构造
+
+## lab7：MPI并行应用
