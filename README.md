@@ -2,7 +2,7 @@
 
 ## lab0: 环境设置与串行矩阵乘法
   
-    > Intel oneAPI Math Kernel Library (MKL)
+> Intel oneAPI Math Kernel Library (MKL)
 
 ## lab1：MPI矩阵乘法
 
