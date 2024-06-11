@@ -24,4 +24,10 @@
 
 > 使用OpenMP/Pthreads/MPI中的一种实现无向图上的多源最短路径搜索，并通过实验分析在不同进程数量、数据下该实现的性能
 
-## lab9：CUDA
+## lab9：CUDA矩阵转置
+
+## lab10：CUDA矩阵乘法
+
+## lab11：CUDA卷积
+
+> final
