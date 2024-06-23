@@ -36,6 +36,9 @@ int main(int argc, char* argv[])
     int strides[] = { 1, 2, 3 };
     int num_kernels = 3; // 卷积核个数
 
+    cudaEvent_t start, stop;
+    float duration_gpu = 0.0f;
+
     // 初始化随机种子
     mt19937 gen(42);
     uniform_real_distribution<> dis(0.0, 1.0);
@@ -134,7 +137,11 @@ int main(int argc, char* argv[])
 
         // 执行前向卷积
         float alpha = 1.0f, beta = 0.0f;
-        auto start_gpu = high_resolution_clock::now();
+
+        cudaEventCreate(&start);
+        cudaEventCreate(&stop);
+        cudaEventRecord(start);
+        // auto start_gpu = high_resolution_clock::now();
         CUDNN_CHECK(cudnnConvolutionForward(cudnn,
             &alpha,
             input_descriptor,
@@ -148,8 +155,11 @@ int main(int argc, char* argv[])
             &beta,
             output_descriptor,
             d_output));
-        auto end_gpu = high_resolution_clock::now();
-        auto duration_gpu = duration_cast<milliseconds>(end_gpu - start_gpu).count();
+        // auto end_gpu = high_resolution_clock::now();
+        // auto duration_gpu = duration_cast<milliseconds>(end_gpu - start_gpu).count();
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+        cudaEventElapsedTime(&duration_gpu, start, stop);
 
         // 拷贝结果回主机
         for (int k = 0; k < num_kernels; ++k) {
@@ -158,9 +168,11 @@ int main(int argc, char* argv[])
         }
 
         // 打印结果
-        cout << "Stride: " << stride << endl;
-        cout << "Output size: " << out_width << " x " << out_height << endl;
-        cout << "GPU Time: " << duration_gpu << " ms" << endl;
+        // cout << "Stride: " << stride << endl;
+        // cout << "Output size: " << out_width << " x " << out_height << endl;
+        // cout << "GPU Time: " << duration_gpu << " ms" << endl;
+
+        cout << width << " " << out_width << " " << stride << " " << duration_gpu << endl;
 
         // 清理工作空间
         CUDA_CHECK(cudaFree(d_workspace));

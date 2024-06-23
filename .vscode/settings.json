@@ -64,7 +64,8 @@
         "stop_token": "cpp",
         "thread": "cpp",
         "cfenv": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "__bit_reference": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/gcc-11",
     "ros.distro": "humble"

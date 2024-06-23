@@ -93,12 +93,12 @@ int main(int argc, char* argv[])
         }
 
         // CPU Convolution
-        auto start_cpu = high_resolution_clock::now();
-        for (int k = 0; k < num_kernels; ++k) {
-            cpu_conv2d(input, kernel, output_cpu[k], width, height, depth, ksize, stride, out_width, out_height);
-        }
-        auto end_cpu = high_resolution_clock::now();
-        auto duration_cpu = duration_cast<milliseconds>(end_cpu - start_cpu).count();
+        // auto start_cpu = high_resolution_clock::now();
+        // for (int k = 0; k < num_kernels; ++k) {
+        //     cpu_conv2d(input, kernel, output_cpu[k], width, height, depth, ksize, stride, out_width, out_height);
+        // }
+        // auto end_cpu = high_resolution_clock::now();
+        // auto duration_cpu = duration_cast<milliseconds>(end_cpu - start_cpu).count();
 
         // Allocate device memory
         float *d_input, *d_kernel, *d_output;
@@ -115,14 +115,25 @@ int main(int argc, char* argv[])
         dim3 gridSize((out_width + blockSize.x - 1) / blockSize.x, (out_height + blockSize.y - 1) / blockSize.y, depth);
 
         // GPU Convolution
-        auto start_gpu = high_resolution_clock::now();
+        // auto start_gpu = high_resolution_clock::now();
+        cudaEvent_t start, stop;
+        cudaEventCreate(&start);
+        cudaEventCreate(&stop);
+
+        cudaEventRecord(start);
         for (int k = 0; k < num_kernels; ++k) {
             conv2d<<<gridSize, blockSize>>>(d_input, d_kernel, d_output, width, height, depth, ksize, stride, out_width, out_height);
             cudaMemcpy(output_gpu[k].data(), d_output, out_width * out_height * depth * sizeof(float), cudaMemcpyDeviceToHost);
         }
         cudaDeviceSynchronize();
-        auto end_gpu = high_resolution_clock::now();
-        auto duration_gpu = duration_cast<milliseconds>(end_gpu - start_gpu).count();
+
+        cudaEventRecord(stop);
+        cudaEventSynchronize(stop);
+
+        float duration_gpu;
+        cudaEventElapsedTime(&duration_gpu, start, stop);
+        // auto end_gpu = high_resolution_clock::now();
+        // auto duration_gpu = duration_cast<milliseconds>(end_gpu - start_gpu).count();
 
         // Free device memory
         cudaFree(d_input);
@@ -130,26 +141,28 @@ int main(int argc, char* argv[])
         cudaFree(d_output);
 
         // Print results
-        cout << "Stride: " << stride << endl;
-        cout << "Output size: " << out_width << " x " << out_height << endl;
-        cout << "CPU Time: " << duration_cpu << " ms" << endl;
-        cout << "GPU Time: " << duration_gpu << " ms" << endl;
+        // cout << "Stride: " << stride << endl;
+        // cout << "Output size: " << out_width << " x " << out_height << endl;
+        // cout << "CPU Time: " << duration_cpu << " ms" << endl;
+        // cout << "GPU Time: " << duration_gpu << " ms" << endl;
+
+        cout << width << " " << out_width << " " << stride << " " << duration_gpu << endl;
 
         // Validate results
-        for (int k = 0; k < num_kernels; ++k) {
-            bool valid = true;
-            for (int i = 0; i < output_cpu[k].size(); ++i) {
-                if (abs(output_cpu[k][i] - output_gpu[k][i]) > 1e-5) {
-                    valid = false;
-                    break;
-                }
-            }
-            if (valid) {
-                cout << "Kernel " << k << ": Results are valid." << endl;
-            } else {
-                cout << "Kernel " << k << ": Results are invalid!" << endl;
-            }
-        }
+        // for (int k = 0; k < num_kernels; ++k) {
+        //     bool valid = true;
+        //     for (int i = 0; i < output_cpu[k].size(); ++i) {
+        //         if (abs(output_cpu[k][i] - output_gpu[k][i]) > 1e-5) {
+        //             valid = false;
+        //             break;
+        //         }
+        //     }
+        //     if (valid) {
+        //         cout << "Kernel " << k << ": Results are valid." << endl;
+        //     } else {
+        //         cout << "Kernel " << k << ": Results are invalid!" << endl;
+        //     }
+        // }
     }
 
     return 0;

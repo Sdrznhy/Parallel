@@ -12,12 +12,16 @@
                 "/usr/include/x86_64-linux-gnu",
                 "/usr/include",
                 "/usr/lib/x86_64-linux-gnu",
-                "/usr/lib/x86_64-linux-gnu/fortran/gfortran-mod-15/openmpi"
+                // "/usr/lib/x86_64-linux-gnu/fortran/gfortran-mod-15/openmpi",
+                "/usr/local/cuda-12.5/include",
+                "/usr/include/x86_64-linux-gnu/cudnn_v9.h"
             ],
             "defines": [],
             "cStandard": "c17",
             "cppStandard": "c++11",
-            "intelliSenseMode": "linux-gcc-x64"
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/usr/local/cuda/bin/nvcc"
         }
     ],
     "version": 4
